@@ -68,13 +68,13 @@ public partial class MainWindow : Window
         }
         catch
         {
-            
+
         }
     }
 
     private void SaveDocument()
     {
-        
+
         if (FilePath != "")
         {
             // Save Stream
@@ -135,14 +135,14 @@ public partial class MainWindow : Window
 
     private void TextBody_TextChanged(object sender, TextChangedEventArgs e)
     {
-        if(TextBody.Text != DocumentContent) 
+        if (TextBody.Text != DocumentContent)
         {
             // add astrix to beging of title
             Match = false;
         }
-        else 
+        else
         {
-            Match = true; 
+            Match = true;
         }
 
         TitleManager();
@@ -190,7 +190,7 @@ public partial class MainWindow : Window
     {
         try
         {
-            var mainWindow= new MainWindow();
+            var mainWindow = new MainWindow();
             mainWindow.Show();
 
             // Code Below was commented out in order to use a a better and more readable code above.
@@ -208,13 +208,13 @@ public partial class MainWindow : Window
         TitleName = "Untitled";
         FilePath = "";
         DocumentContent = "";
-        Match= true;
+        Match = true;
         TextBody.Text = "";
     }
 
     private void New_MenuItem_Click(object sender, RoutedEventArgs e)
     {
-        if (!Match) 
+        if (!Match)
         {
             if (MessageBox.Show(
                 "Save Changes?",
@@ -227,8 +227,32 @@ public partial class MainWindow : Window
         }
 
         NewDocument();
-        
+
     }
+
+    private void PageSetup_MenuItem_Click(object sender, RoutedEventArgs e)
+    {
+        var pd = new PrintDialog();
+        pd.ShowDialog();
+    }
+
+    private void Exit_MenuItem_Click(object sender, RoutedEventArgs e) { this.Close(); }
+
+    private void SaveAs_MenuItem_Click(object sender, RoutedEventArgs e) { SaveAs(); }
+
+    private void Undo_MenuItem_Click(object sender, RoutedEventArgs e) { if (TextBody.CanUndo) { TextBody.Undo(); } }
+
+    private void Cut_MenuItem_Click(object sender, RoutedEventArgs e) { TextBody.Cut(); }
+
+    private void Copy_MenuItem_Click(object sender, RoutedEventArgs e) { TextBody.Copy(); }
+
+    private void Paste_MenuItem_Click(object sender, RoutedEventArgs e) { TextBody.Paste(); }
+
+    private void Delete_MenuItem_Click(object sender, RoutedEventArgs e) { TextBody.Text = TextBody.Text.Remove(TextBody.SelectionStart, TextBody.SelectionLength); }
+
+    private void SelectAll_MenuItem_Click(object sender, RoutedEventArgs e) { TextBody.SelectAll(); }
+
+    private void TimeDate_MenuItem_Click(object sender, RoutedEventArgs e) { TextBody.Text = TextBody.Text.Insert(TextBody.CaretIndex, DateTime.Now.ToString()); }
 }
 
 

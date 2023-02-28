@@ -38,26 +38,31 @@
                 <MenuItem x:Name="NewWindow_MenuItem" Header="New Window" InputGestureText="Ctrl+Shift+N" Click="NewWindow_MenuItem_Click"/>
                 <MenuItem Header="Open..." x:Name="OpenMenu" InputGestureText="Ctrl+O" Click="OpenMenu_Click"/>
                 <MenuItem x:Name="Save_MenuItem" Header="Save" InputGestureText="Ctrl+S" Click="Save_MenuItem_Click" />
-                <MenuItem Header="Save As..." InputGestureText="Ctrl+Shift+S"/>
+                <MenuItem x:Name="SaveAs_MenuItem" Header="Save As..." InputGestureText="Ctrl+Shift+S" Click="SaveAs_MenuItem_Click" />
                 <Separator Background="{StaticResource DefaultSeparator}" />
-                <MenuItem Header="Exit"/>
+                <MenuItem x:Name="PageSetup_MenuItem" Header="Page Setup" Click="PageSetup_MenuItem_Click" />
+                <MenuItem Header="Print" IsEnabled="False" />
+                <Separator Background="{StaticResource DefaultSeparator}" />
+                <MenuItem x:Name="Exit_MenuItem" Header="Exit" Click="Exit_MenuItem_Click" />
             </MenuItem>
             <MenuItem Header="Edit">
-                <MenuItem Header="Undo" InputGestureText="Ctrl+Z"/>
+                <MenuItem x:Name="Undo_MenuItem" Header="Undo" InputGestureText="Ctrl+Z" Click="Undo_MenuItem_Click" />
                 <Separator Background="{StaticResource DefaultSeparator}"/>
-                <MenuItem Header="Cut" InputGestureText="Ctrl+X"/>
-                <MenuItem Header="Copy" InputGestureText="Ctrl+C"/>
-                <MenuItem Header="Paste" InputGestureText="Ctrl+V"/>
-                <MenuItem Header="Delete" InputGestureText="Del"/>
-                <Separator Background="{StaticResource DefaultSeparator}"/>
-                <MenuItem Header="Find" InputGestureText="Ctrl+F"/>
-                <MenuItem Header="Find Next" InputGestureText="F3"/>
-                <MenuItem Header="Find Previous" InputGestureText="Shift+F3"/>
-                <MenuItem Header="Replace" InputGestureText="Ctrl+H"/>
-                <MenuItem Header="Go To..." InputGestureText="Ctrl+G"/>
-                <Separator Background="{StaticResource DefaultSeparator}"/>
-                <MenuItem Header="Select All" InputGestureText="Ctrl+A"/>
-                <MenuItem Header="Delete" InputGestureText="F5"/>
+                <MenuItem x:Name="Cut_MenuItem" Header="Cut" InputGestureText="Ctrl+X" Click="Cut_MenuItem_Click" />
+                <MenuItem x:Name="Copy_MenuItem" Header="Copy" InputGestureText="Ctrl+C" Click="Copy_MenuItem_Click" />
+                <MenuItem x:Name="Paste_MenuItem" Header="Paste" InputGestureText="Ctrl+V" Click="Paste_MenuItem_Click" />
+                <MenuItem x:Name="Delete_MenuItem" Header="Delete" InputGestureText="Del" Click="Delete_MenuItem_Click" />
+                <Separator Background="{StaticResource DefaultSeparator}" />
+                <!-- To be later used
+                <MenuItem Header="Find" InputGestureText="Ctrl+F" />
+                <MenuItem Header="Find Next" InputGestureText="F3" />
+                <MenuItem Header="Find Previous" InputGestureText="Shift+F3" />
+                <MenuItem Header="Replace" InputGestureText="Ctrl+H" />
+                <MenuItem Header="Go To..." InputGestureText="Ctrl+G" />
+                <Separator Background="{StaticResource DefaultSeparator}" />
+                -->
+                <MenuItem x:Name="SelectAll_MenuItem" Header="Select All" InputGestureText="Ctrl+A" Click="SelectAll_MenuItem_Click"/>
+                <MenuItem x:Name="TimeDate_MenuItem" Header="Time/Date" InputGestureText="F5" Click="TimeDate_MenuItem_Click" />
             </MenuItem>
             <MenuItem Header="View">
                 <MenuItem Header="Zoom">
