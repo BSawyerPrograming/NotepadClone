@@ -20,11 +20,14 @@ namespace BookWyrmWPF.Views;
 
 public partial class MainWindow : Window
 {
-    bool Match { get; set; } = true;
+    private bool Match { get; set; } = true;
 
-    string FilePath { get; set; } = "";
-    string TitleName { get; set; } = "Untitled";
-    string DocumentContent { get; set; } = "";
+    private string FilePath { get; set; } = "";
+    private string TitleName { get; set; } = "Untitled";
+    private string DocumentContent { get; set; } = "";
+
+    private bool ShowStatusBar { get; set; } = true;
+    private bool WordWrap { get; set; } = true;
 
     public MainWindow()
     {
@@ -253,8 +256,41 @@ public partial class MainWindow : Window
     private void SelectAll_MenuItem_Click(object sender, RoutedEventArgs e) { TextBody.SelectAll(); }
 
     private void TimeDate_MenuItem_Click(object sender, RoutedEventArgs e) { TextBody.Text = TextBody.Text.Insert(TextBody.CaretIndex, DateTime.Now.ToString()); }
+
+    private void StatusBarManager()
+    {
+        if (ShowStatusBar) 
+        { 
+            StatusBar.Visibility = Visibility.Collapsed;
+            ShowStatusBar = false;
+        }
+        else
+        { 
+            StatusBar.Visibility = Visibility.Visible;
+            ShowStatusBar = true;
+        }
+    }
+
+    private void WordWrapManager()
+    {
+        if (WordWrap)
+        {
+            TextBody.TextWrapping = TextWrapping.NoWrap;
+            WordWrap = false;
+        }
+        else
+        {
+            TextBody.TextWrapping = TextWrapping.Wrap;
+            WordWrap = true;
+        }
+    }
+    private void ShowStatusBar_MenuItem_Click(object sender, RoutedEventArgs e)
+    {
+        StatusBarManager();
+    }
+
+    private void WordWrap_MenuItem_Click(object sender, RoutedEventArgs e)
+    {
+        WordWrapManager();
+    }
 }
-
-
-
-

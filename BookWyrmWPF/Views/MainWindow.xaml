@@ -53,31 +53,29 @@
                 <MenuItem x:Name="Paste_MenuItem" Header="Paste" InputGestureText="Ctrl+V" Click="Paste_MenuItem_Click" />
                 <MenuItem x:Name="Delete_MenuItem" Header="Delete" InputGestureText="Del" Click="Delete_MenuItem_Click" />
                 <Separator Background="{StaticResource DefaultSeparator}" />
-                <!-- To be later used
                 <MenuItem Header="Find" InputGestureText="Ctrl+F" />
                 <MenuItem Header="Find Next" InputGestureText="F3" />
                 <MenuItem Header="Find Previous" InputGestureText="Shift+F3" />
                 <MenuItem Header="Replace" InputGestureText="Ctrl+H" />
                 <MenuItem Header="Go To..." InputGestureText="Ctrl+G" />
                 <Separator Background="{StaticResource DefaultSeparator}" />
-                -->
                 <MenuItem x:Name="SelectAll_MenuItem" Header="Select All" InputGestureText="Ctrl+A" Click="SelectAll_MenuItem_Click"/>
                 <MenuItem x:Name="TimeDate_MenuItem" Header="Time/Date" InputGestureText="F5" Click="TimeDate_MenuItem_Click" />
             </MenuItem>
             <MenuItem Header="View">
                 <MenuItem Header="Zoom">
-                    <MenuItem Header="Zoom In" InputGestureText="Ctrl+Plus"/>
-                    <MenuItem Header="Zoom Out" InputGestureText="Ctrl+Minus"/>
-                    <MenuItem Header="Restore Default Zoom" InputGestureText="Ctrl+0"/>
+                    <MenuItem Header="Zoom In" InputGestureText="Ctrl+Plus" />
+                    <MenuItem Header="Zoom Out" InputGestureText="Ctrl+Minus" />
+                    <MenuItem Header="Restore Default Zoom" InputGestureText="Ctrl+0" />
                 </MenuItem>
-                <MenuItem Header="Status Bar" IsCheckable="True" IsChecked="True"/>
-                <MenuItem Header="Word Wrap" IsCheckable="True" IsChecked="True"/>
+                <MenuItem x:Name="ShowStatusBar_MenuItem" Header="Status Bar" IsCheckable="True" IsChecked="True" Click="ShowStatusBar_MenuItem_Click"/>
+                <MenuItem x:Name="WordWrap_MenuItem" Header="Word Wrap" IsCheckable="True" IsChecked="True" Click="WordWrap_MenuItem_Click" />
             </MenuItem>
         </Menu>
 
         <!--Footer-->
         <Rectangle Fill="#FF2D2931" Grid.Row="2"/>
-        <Grid Grid.Row="2">
+        <Grid x:Name="StatusBar" Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition Width="50" />
