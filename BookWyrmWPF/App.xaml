@@ -36,6 +36,14 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
+        <!--TextBlock-->
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+            <Setter Property="TextTrimming" Value="None"/>
+            <Setter Property="Foreground" Value="AntiqueWhite"/>
+        </Style>
+        
         <Style x:Key="{ComponentResourceKey ResourceId=MenuScrollViewer, TypeInTargetAssembly={x:Type FrameworkElement}}" BasedOn="{x:Null}" TargetType="{x:Type ScrollViewer}">
             <Setter Property="HorizontalScrollBarVisibility" Value="Hidden"/>
             <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
