@@ -29,7 +29,8 @@
         <Rectangle Fill="#FF403D44" Grid.Row="1"/>
         <TextBox x:Name="TextBody" Grid.Row="1" Background="Transparent" BorderThickness="0" Padding="20"
                  FontSize="16" FontFamily="Calibri" Foreground="#FFBBBBBB" CaretBrush="#FFBBBBBB"
-                 AcceptsReturn="True" TextWrapping="Wrap" TextChanged="TextBody_TextChanged"/>
+                 AcceptsReturn="True" TextWrapping="Wrap" TextChanged="TextBody_TextChanged"
+                 VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
         
         <!--Menu-->
         <Menu Background="Transparent" VerticalAlignment="Center" VerticalContentAlignment="Center" Foreground="#FFBBBBBB">
@@ -53,11 +54,14 @@
                 <MenuItem x:Name="Paste_MenuItem" Header="Paste" InputGestureText="Ctrl+V" Click="Paste_MenuItem_Click" />
                 <MenuItem x:Name="Delete_MenuItem" Header="Delete" InputGestureText="Del" Click="Delete_MenuItem_Click" />
                 <Separator Background="{StaticResource DefaultSeparator}" />
+                
+                <!--Not Implemented-->
                 <MenuItem Header="Find" InputGestureText="Ctrl+F" />
                 <MenuItem Header="Find Next" InputGestureText="F3" />
                 <MenuItem Header="Find Previous" InputGestureText="Shift+F3" />
                 <MenuItem Header="Replace" InputGestureText="Ctrl+H" />
                 <MenuItem Header="Go To..." InputGestureText="Ctrl+G" />
+                
                 <Separator Background="{StaticResource DefaultSeparator}" />
                 <MenuItem x:Name="SelectAll_MenuItem" Header="Select All" InputGestureText="Ctrl+A" Click="SelectAll_MenuItem_Click"/>
                 <MenuItem x:Name="TimeDate_MenuItem" Header="Time/Date" InputGestureText="F5" Click="TimeDate_MenuItem_Click" />
