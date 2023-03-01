@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Diagnostics;
 
-namespace BookWyrmWPF.Views;
+namespace NotepadClone.Views;
 
 public partial class MainWindow : Window
 {
